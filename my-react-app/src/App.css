@@ -97,10 +97,9 @@
 }
 
 .bigger-text {
-  font-size: 32px; /* Ikki barobar katta */
+  font-size: 32px; 
 }
 
-/* Tugmalarga ta'sir qilishi uchun (ixtiyoriy) */
 .bigger-text button {
   padding: 20px;
   font-size: 24px;

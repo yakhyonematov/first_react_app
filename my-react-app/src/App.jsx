@@ -113,8 +113,6 @@ function App() {
         await apiUpdateUser(editingUserId, userData);
         setEditingUserId(null);
       } else {
-        // Note: Backend might require a 'parol' for new users. 
-        // Adding a default one if it fails or if you want to be safe.
         await createUser({ ...userData, parol: "default123" });
       }
       setIsm("");
