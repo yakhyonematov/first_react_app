@@ -5,6 +5,10 @@ import About from "./components/About/About";
 import Books from "./components/Book/Books";
 import Users from "./components/User/Users";
 import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Profile from "./components/User/Profile";
+import NotFound from "./components/NotFound/NotFound";
+import ProtectedRoute from "./Routes/ProtectedRoute";
 
 function App() {
   return (
@@ -20,6 +24,16 @@ function App() {
           />
           <Route path="/users" element={<Users />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       

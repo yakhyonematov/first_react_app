@@ -1,20 +1,26 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LogIn, Mail, Lock, Loader2 } from "lucide-react";
+import { loginUser } from "../services/authService";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // Simulating login
-    setTimeout(() => {
-      console.log("Login attempt:", { email, password });
-      alert("Kirish muvaffaqiyatli! (Hozircha faqat demo)");
+    try {
+      const response = await loginUser({ email, parol: password });
+      localStorage.setItem("token", response.data.token);
+      navigate("/profile");
+    } catch (error) {
+      alert("Xatolik yuz berdi. Iltimos qaytadan urunib ko'ring.");
+    } finally {
       setLoading(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -84,7 +90,7 @@ function Login() {
           <div className="mt-8 pt-8 border-t border-gray-700 text-center">
             <p className="text-gray-400">
               Hisobingiz yo'qmi?{" "}
-              <a href="#" className="text-yellow-400 font-bold hover:underline">
+              <a href="/register" className="text-yellow-400 font-bold hover:underline">
                 Ro'yxatdan o'tish
               </a>
             </p>

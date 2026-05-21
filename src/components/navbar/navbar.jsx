@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, BookOpen, User, Home, Info, LogIn } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem("token"));
+  }, [location]);
 
   const navLinks = [
     { name: "Asosiy", path: "/", icon: Home },
@@ -28,7 +33,6 @@ export default function Navbar() {
           <span className="tracking-tighter">BOOKS APP</span>
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
             <Link
@@ -45,15 +49,23 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="h-6 w-px bg-gray-800 mx-2"></div>
-          <Link
-            to="/login"
-            className="bg-yellow-400 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center gap-2 active:scale-95 shadow-lg shadow-yellow-400/20"
-          >
-            <LogIn size={18} /> Kirish
-          </Link>
+          {isLoggedIn ? (
+            <Link
+              to="/profile"
+              className="bg-yellow-400 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center gap-2 active:scale-95 shadow-lg shadow-yellow-400/20"
+            >
+              <User size={18} /> Profil
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="bg-yellow-400 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center gap-2 active:scale-95 shadow-lg shadow-yellow-400/20"
+            >
+              <LogIn size={18} /> Kirish
+            </Link>
+          )}
         </div>
 
-        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 hover:bg-gray-800 rounded-xl transition-colors"
@@ -62,7 +74,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-gray-900 border-t border-gray-800 flex flex-col p-6 gap-3 animate-in slide-in-from-top-4 duration-300">
           {navLinks.map((link) => (
@@ -80,13 +91,23 @@ export default function Navbar() {
               <span className="font-semibold text-lg">{link.name}</span>
             </Link>
           ))}
-          <Link
-            to="/login"
-            onClick={() => setOpen(false)}
-            className="mt-4 bg-yellow-400 text-black p-5 rounded-2xl font-bold text-center text-lg flex items-center justify-center gap-2"
-          >
-            <LogIn size={22} /> Kirish
-          </Link>
+          {isLoggedIn ? (
+            <Link
+              to="/profile"
+              onClick={() => setOpen(false)}
+              className="mt-4 bg-yellow-400 text-black p-5 rounded-2xl font-bold text-center text-lg flex items-center justify-center gap-2"
+            >
+              <User size={22} /> Profil
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              onClick={() => setOpen(false)}
+              className="mt-4 bg-yellow-400 text-black p-5 rounded-2xl font-bold text-center text-lg flex items-center justify-center gap-2"
+            >
+              <LogIn size={22} /> Kirish
+            </Link>
+          )}
         </div>
       )}
     </nav>
