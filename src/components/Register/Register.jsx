@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { registerUser } from "../services/authService";
+import { useLanguage } from "../Language/hooks";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ export default function Register() {
   const [yosh, setYosh] = useState("");
   const [email, setEmail] = useState("");
   const [parol, setParol] = useState("");
+  const { t } = useLanguage();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -32,10 +34,10 @@ export default function Register() {
         onSubmit={handleSubmit}
         className="bg-gray-800 shadow-2xl rounded-3xl p-10 w-full sm:w-[500px] flex flex-col gap-5 border border-gray-700"
       >
-        <h1 className="text-4xl font-black text-center text-white mb-4">Ro'yxatdan o'tish</h1>
+        <h1 className="text-4xl font-black text-center text-white mb-4">{t("register.title")}</h1>
         <input
           type="text"
-          placeholder="Ism"
+          placeholder={t("register.placeholders.first_name")}
           value={ism}
           onChange={(e) => setIsm(e.target.value)}
           className="bg-gray-700/50 border border-gray-600 p-4 rounded-2xl outline-none text-white focus:ring-2 focus:ring-yellow-400 transition-all"
@@ -43,7 +45,7 @@ export default function Register() {
         />
         <input
           type="text"
-          placeholder="Familiya"
+          placeholder={t("register.placeholders.last_name")}
           value={familiya}
           onChange={(e) => setFamiliya(e.target.value)}
           className="bg-gray-700/50 border border-gray-600 p-4 rounded-2xl outline-none text-white focus:ring-2 focus:ring-yellow-400 transition-all"
@@ -51,7 +53,7 @@ export default function Register() {
         />
         <input
           type="number"
-          placeholder="Yosh"
+          placeholder={t("register.placeholders.age")}
           value={yosh}
           onChange={(e) => setYosh(e.target.value)}
           className="bg-gray-700/50 border border-gray-600 p-4 rounded-2xl outline-none text-white focus:ring-2 focus:ring-yellow-400 transition-all"
@@ -59,7 +61,7 @@ export default function Register() {
         />
         <input
           type="email"
-          placeholder="Email"
+          placeholder={t("register.placeholders.email")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="bg-gray-700/50 border border-gray-600 p-4 rounded-2xl outline-none text-white focus:ring-2 focus:ring-yellow-400 transition-all"
@@ -67,20 +69,20 @@ export default function Register() {
         />
         <input
           type="password"
-          placeholder="Parol"
+          placeholder={t("register.placeholders.password")}
           value={parol}
           onChange={(e) => setParol(e.target.value)}
           className="bg-gray-700/50 border border-gray-600 p-4 rounded-2xl outline-none text-white focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         />
         <button className="bg-yellow-400 text-black py-4 rounded-2xl font-black hover:bg-yellow-500 duration-300 shadow-lg shadow-yellow-400/20 active:scale-95">
-          Ro'yxatdan o'tish
+          {t("register.button")}
         </button>
         <p className="text-gray-400 text-center mt-2">
-          Hisobingiz bormi?{" "}
-          <a href="/login" className="text-yellow-400 font-bold hover:underline">
-            Kirish
-          </a>
+          {t("register.has_account")}{" "}
+          <Link to="/login" className="text-yellow-400 font-bold hover:underline">
+            {t("register.login_link")}
+          </Link>
         </p>
       </form>
     </div>

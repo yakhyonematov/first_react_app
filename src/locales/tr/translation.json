@@ -1,0 +1,119 @@
+{
+  "navbar": {
+    "logo": "BOOKS APP",
+    "asosiy": "Anasayfa",
+    "kitoblar": "Kitaplar",
+    "foydalanuvchilar": "Kullanıcılar",
+    "haqida": "Hakkında",
+    "ice cream": "Dondurma",
+    "kirish": "Giriş Yap"
+  },
+  "asosiy": {
+    "h1": "Kütüphanenizi Kolayca Yönetin",
+    "p": "Kitapları ve kullanıcıları tek bir yerden, rahat ve hızlı bir şekilde yönetme imkanı. Modern arayüz ve yüksek hız.",
+    "buttons": {
+      "kitoblar": "Kitaplar",
+      "foydalanuvchilar": "Kullanıcılar"
+    },
+    "cards": {
+      "card1": {
+        "h2": "Kitap Yönetimi",
+        "p": "Kolayca yeni kitaplar ekleyin, düzenleyin ve silin."
+      },
+      "card2": {
+        "h2": "Kullanıcılar",
+        "p": "Üye listesi oluşturun ve bilgilerini takip edin."
+      },
+      "card3": {
+        "h2": "Hızlı Arayüz",
+        "p": "Vite ve React kullanılarak geliştirilmiş hızlı ve akıcı bir sistem."
+      }
+    }
+  },
+  "books": {
+    "title": "Kitaplar",
+    "subtitle": "Kütüphanedeki tüm kitapların listesi",
+    "no_books": "Şu anda mevcut kitap bulunmamaktadır.",
+    "confirm_delete": "Bu kitabı silmek istediğinize emin misiniz?"
+  },
+  "bookForm": {
+    "add_title": "Yeni Kitap Ekle",
+    "edit_title": "Kitabı Düzenle",
+    "labels": {
+      "name": "Kitap Adı",
+      "author": "Yazar",
+      "pages": "Sayfa Sayısı",
+      "genre": "Tür"
+    },
+    "placeholders": {
+      "name": "Örn: Geçmiş Günler",
+      "author": "Örn: Abdulla Qodiriy",
+      "pages": "Örn: 400",
+      "genre": "Örn: Roman"
+    },
+    "buttons": {
+      "add": "Kitap Ekle",
+      "save": "Değişiklikleri Kaydet"
+    }
+  },
+  "bookCard": {
+    "tooltips": {
+      "edit": "Düzenle",
+      "delete": "Sil"
+    },
+    "labels": {
+      "author": "Yazar:",
+      "pages": "Sayfa:",
+      "genre": "Tür:"
+    },
+    "page_unit": "sayfa"
+  },
+  "register": {
+    "title": "Kayıt Ol",
+    "placeholders": {
+      "first_name": "Ad",
+      "last_name": "Soyad",
+      "age": "Yaş",
+      "email": "E-posta",
+      "password": "Şifre"
+    },
+    "button": "Kayıt Ol",
+    "has_account": "Zaten bir hesabınız var mı?",
+    "login_link": "Giriş Yap"
+  },
+  "login": {
+    "title": "Hoş Geldiniz",
+    "subtitle": "Hesabınıza erişmek için bilgilerinizi girin",
+    "labels": {
+      "email": "E-posta Adresi",
+      "password": "Şifre"
+    },
+    "buttons": {
+      "submit": "Giriş Yap",
+      "loading": "Kontrol ediliyor..."
+    },
+    "no_account": "Hesabınız yok mu?",
+    "register_link": "Kayıt Ol",
+    "error_alert": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "about": {
+    "badge": "Profil Bilgileri",
+    "greeting": "Merhaba, ben {{name}}",
+    "age_label": "Yaş",
+    "age_value": "{{yosh}} yaşında",
+    "job_label": "Meslek / Alan",
+    "description": "\"Bu proje, bir kütüphane sistemini verimli bir şekilde yönetmek amacıyla React ve Tailwind CSS kullanılarak geliştirilmiştir.\""
+  },
+  "iceCream": {
+    "count_title": "Dondurma Sayısı:",
+    "buy_button": "Dondurma Satın Al 🍦"
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Üzgünüz, aradığınız sayfa mevcut değil veya başka bir adrese taşınmış olabilir.",
+    "back_button": "Anasayfaya Dön"
+  },
+  "footer": {
+    "p": "© 2026 Books App. Tüm hakları saklıdır. Tailwind CSS & React kullanılarak sevgiyle geliştirilmiştir."
+  }
+}

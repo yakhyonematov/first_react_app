@@ -1,0 +1,119 @@
+{
+  "navbar": {
+    "logo": "BOOKS APP",
+    "asosiy": "Startseite",
+    "kitoblar": "Bücher",
+    "foydalanuvchilar": "Benutzer",
+    "haqida": "Über uns",
+    "ice cream": "Eiscreme",
+    "kirish": "Einloggen"
+  },
+  "asosiy": {
+    "h1": "Verwalten Sie Ihre Bibliothek mit Leichtigkeit",
+    "p": "Bücher und Benutzer an einem Ort verwalten – bequem, schnell und effizient. Moderne Benutzeroberfläche und hohe Geschwindigkeit.",
+    "buttons": {
+      "kitoblar": "Bücher",
+      "foydalanuvchilar": "Benutzer"
+    },
+    "cards": {
+      "card1": {
+        "h2": "Bücherverwaltung",
+        "p": "Fügen Sie neue Bücher hinzu, bearbeiten oder löschen Sie sie."
+      },
+      "card2": {
+        "h2": "Benutzerverwaltung",
+        "p": "Erstellen Sie Mitgliederlisten und verfolgen Sie deren Informationen."
+      },
+      "card3": {
+        "h2": "Schnelle Schnittstelle",
+        "p": "Ein schnelles und flüssiges System, entwickelt mit Vite und React."
+      }
+    }
+  },
+  "books": {
+    "title": "Bücher",
+    "subtitle": "Liste aller Bücher in der Bibliothek",
+    "no_books": "Derzeit sind keine Bücher verfügbar.",
+    "confirm_delete": "Möchten Sie dieses Buch wirklich löschen?"
+  },
+  "bookForm": {
+    "add_title": "Neues Buch hinzufügen",
+    "edit_title": "Buch bearbeiten",
+    "labels": {
+      "name": "Buchtitel",
+      "author": "Autor",
+      "pages": "Seitenzahl",
+      "genre": "Genre"
+    },
+    "placeholders": {
+      "name": "z. B. Vergangene Tage",
+      "author": "z. B. Abdulla Qodiriy",
+      "pages": "z. B. 400",
+      "genre": "z. B. Roman"
+    },
+    "buttons": {
+      "add": "Buch hinzufügen",
+      "save": "Daten speichern"
+    }
+  },
+  "bookCard": {
+    "tooltips": {
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    },
+    "labels": {
+      "author": "Autor:",
+      "pages": "Seiten:",
+      "genre": "Genre:"
+    },
+    "page_unit": "Seiten"
+  },
+  "register": {
+    "title": "Registrieren",
+    "placeholders": {
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "age": "Alter",
+      "email": "E-Mail",
+      "password": "Passwort"
+    },
+    "button": "Registrieren",
+    "has_account": "Haben Sie bereits ein Konto?",
+    "login_link": "Einloggen"
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "subtitle": "Geben Sie Ihre Daten ein, um sich anzumelden",
+    "labels": {
+      "email": "E-Mail-Adresse",
+      "password": "Passwort"
+    },
+    "buttons": {
+      "submit": "Einloggen",
+      "loading": "Überprüfung..."
+    },
+    "no_account": "Haben Sie kein Konto?",
+    "register_link": "Registrieren",
+    "error_alert": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "about": {
+    "badge": "Profilinformationen",
+    "greeting": "Hallo, ich bin {{name}}",
+    "age_label": "Alter",
+    "age_value": "{{yosh}} Jahre alt",
+    "job_label": "Beruf / Bereich",
+    "description": "\"Dieses Projekt wurde mit React und Tailwind CSS entwickelt, um ein Bibliothekssystem effizient zu verwalten.\""
+  },
+  "iceCream": {
+    "count_title": "Anzahl der Eiscremes:",
+    "buy_button": "Eiscreme kaufen 🍦"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, die von Ihnen gesuchte Seite existiert nicht oder wurde an eine andere Adresse verschoben.",
+    "back_button": "Zurück zur Startseite"
+  },
+  "footer": {
+    "p": "© 2026 Books App. Alle Rechte vorbehalten. Mit Liebe erstellt mit Tailwind CSS & React."
+  }
+}

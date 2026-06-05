@@ -9,6 +9,10 @@ import Register from "./components/Register/Register";
 import Profile from "./components/User/Profile";
 import NotFound from "./components/NotFound/NotFound";
 import ProtectedRoute from "./Routes/ProtectedRoute";
+import IceCreamContainer from "./components/IceCream/IceCreamContainer";
+import "./i18n"
+
+
 
 function App() {
   return (
@@ -17,6 +21,7 @@ function App() {
       <main className="animate-in fade-in duration-700">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/icecream" element={<IceCreamContainer />} />
           <Route path="/books" element={<Books />} />
           <Route
             path="/about"

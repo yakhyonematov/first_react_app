@@ -8,6 +8,7 @@ import {
   updateBook as apiUpdateBook,
 } from "../services/bookService";
 import { Loader2, PlusCircle } from "lucide-react";
+import { useLanguage } from "../Language/hooks";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -17,6 +18,7 @@ function Books() {
   const [janr, setJanr] = useState("");
   const [editingBookId, setEditingBookId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useLanguage();
 
   const fetchBooks = useCallback(async () => {
     setLoading(true);
@@ -64,7 +66,7 @@ function Books() {
   };
 
   const handleDeleteBook = async (id) => {
-    if (window.confirm("Rostdan ham ushbu kitobni o'chirmoqchimisiz?")) {
+    if (window.confirm(t("books.confirm_delete"))) {
       try {
         await apiDeleteBook(id);
         fetchBooks();
@@ -79,9 +81,9 @@ function Books() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
         <div>
           <h1 className="text-4xl font-extrabold text-white mb-2 flex items-center gap-3">
-            Kitoblar <PlusCircle className="text-yellow-400" />
+            {t("books.title")} <PlusCircle className="text-yellow-400" />
           </h1>
-          <p className="text-gray-400 text-lg">Kutubxonadagi barcha kitoblar ro'yxati</p>
+          <p className="text-gray-400 text-lg">{t("books.subtitle")}</p>
         </div>
         <div className="h-1 flex-grow bg-gray-800 rounded-full hidden md:block mx-8"></div>
       </div>
@@ -116,7 +118,7 @@ function Books() {
             ))
           ) : (
             <div className="col-span-full py-20 text-center bg-gray-800 rounded-3xl border-2 border-dashed border-gray-700">
-              <p className="text-gray-500 text-xl italic">Hozircha kitoblar mavjud emas.</p>
+              <p className="text-gray-500 text-xl italic">{t("books.no_books")}</p>
             </div>
           )}
         </div>

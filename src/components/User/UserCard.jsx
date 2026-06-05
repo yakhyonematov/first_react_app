@@ -1,6 +1,9 @@
 import { User as UserIcon, Mail, Edit2, Trash2 } from "lucide-react";
+import { useLanguage } from "../Language/hooks";
 
 function UserCard({ user, editUser, deleteUser }) {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-gray-800 p-6 rounded-3xl shadow-xl border border-gray-700 hover:border-blue-400/50 transition-all group">
       <div className="flex items-center gap-4 mb-6">
@@ -11,7 +14,7 @@ function UserCard({ user, editUser, deleteUser }) {
           <h2 className="text-xl font-bold text-white line-clamp-1">
             {user.ism} {user.familiya}
           </h2>
-          <p className="text-sm text-gray-400">{user.yosh} yoshda</p>
+          <p className="text-sm text-gray-400">{t("about.age_value", { yosh: user.yosh })}</p>
         </div>
       </div>
 
@@ -25,13 +28,13 @@ function UserCard({ user, editUser, deleteUser }) {
           onClick={() => editUser(user)}
           className="flex items-center justify-center gap-2 bg-gray-700 text-gray-200 py-2.5 rounded-xl hover:bg-blue-500 hover:text-white transition-all text-sm font-medium"
         >
-          <Edit2 size={16} /> Tahrirlash
+          <Edit2 size={16} /> {t("bookCard.tooltips.edit")}
         </button>
         <button
           onClick={() => deleteUser(user._id || user.id)}
           className="flex items-center justify-center gap-2 bg-gray-700 text-gray-200 py-2.5 rounded-xl hover:bg-red-500 hover:text-white transition-all text-sm font-medium"
         >
-          <Trash2 size={16} /> O'chirish
+          <Trash2 size={16} /> {t("bookCard.tooltips.delete")}
         </button>
       </div>
     </div>

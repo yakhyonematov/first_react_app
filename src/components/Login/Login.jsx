@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { LogIn, Mail, Lock, Loader2 } from "lucide-react";
 import { loginUser } from "../services/authService";
+import { useLanguage } from "../Language/hooks";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ function Login() {
       localStorage.setItem("token", response.data.token);
       navigate("/profile");
     } catch (error) {
-      alert("Xatolik yuz berdi. Iltimos qaytadan urunib ko'ring.");
+      alert(t("login.error_alert"));
     } finally {
       setLoading(false);
     }
@@ -32,15 +34,15 @@ function Login() {
               <LogIn size={32} />
             </div>
             <h2 className="text-3xl font-black text-center text-white">
-              Xush kelibsiz
+              {t("login.title")}
             </h2>
-            <p className="text-gray-400 mt-2">Tizimga kirish uchun ma'lumotlarni kiriting</p>
+            <p className="text-gray-400 mt-2 text-center">{t("login.subtitle")}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-400 ml-1">
-                Email manzil
+                {t("login.labels.email")}
               </label>
               <div className="relative">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
@@ -57,7 +59,7 @@ function Login() {
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-400 ml-1">
-                Parol
+                {t("login.labels.password")}
               </label>
               <div className="relative">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
@@ -79,20 +81,20 @@ function Login() {
             >
               {loading ? (
                 <>
-                  <Loader2 className="animate-spin" size={20} /> Tekshirilmoqda...
+                  <Loader2 className="animate-spin" size={20} /> {t("login.buttons.loading")}
                 </>
               ) : (
-                "Kirish"
+                t("login.buttons.submit")
               )}
             </button>
           </form>
 
           <div className="mt-8 pt-8 border-t border-gray-700 text-center">
             <p className="text-gray-400">
-              Hisobingiz yo'qmi?{" "}
-              <a href="/register" className="text-yellow-400 font-bold hover:underline">
-                Ro'yxatdan o'tish
-              </a>
+              {t("login.no_account")}{" "}
+              <Link to="/register" className="text-yellow-400 font-bold hover:underline">
+                {t("login.register_link")}
+              </Link>
             </p>
           </div>
         </div>

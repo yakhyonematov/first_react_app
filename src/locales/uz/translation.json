@@ -1,0 +1,119 @@
+{
+  "navbar": {
+    "logo": "BOOKS APP",
+    "asosiy": "Asosiy",
+    "kitoblar": "Kitoblar",
+    "foydalanuvchilar": "Foydalanuvchilar",
+    "haqida": "Haqida",
+    "ice cream": "Ice Cream",
+    "kirish": "Kirish"
+  },
+  "asosiy": {
+    "h1": "Kutubxonangizni oson boshqaring",
+    "p": "Kitoblar va foydalanuvchilarni bir joyda, qulay va tezkor boshqarish imkoniyati. Zamonaviy interfeys va yuqori tezlik.",
+    "buttons": {
+      "kitoblar": "Kitoblar",
+      "foydalanuvchilar": "Foydalanuvchilar"
+    },
+    "cards": {
+      "card1": {
+        "h2": "Kitoblar Boshqaruvi",
+        "p": "Yangi kitoblar qo'shing, tahrirlang va o'chirib tashlang."
+      },
+      "card2": {
+        "h2": "Foydalanuvchilar",
+        "p": "A'zolar ro'yxatini shakllantiring va ma'lumotlarini kuzating."
+      },
+      "card3": {
+        "h2": "Tezkor Interfeys",
+        "p": "Vite va React yordamida yaratilgan tezkor va ravon tizim."
+      }
+    }
+  },
+  "books": {
+    "title": "Kitoblar",
+    "subtitle": "Kutubxonadagi barcha kitoblar ro'yxati",
+    "no_books": "Hozircha kitoblar mavjud emas.",
+    "confirm_delete": "Rostdan ham ushbu kitobni o'chirmoqchimisiz?"
+  },
+  "bookForm": {
+    "add_title": "Yangi kitob qo'shish",
+    "edit_title": "Kitobni tahrirlash",
+    "labels": {
+      "name": "Kitob nomi",
+      "author": "Muallif",
+      "pages": "Sahifalar soni",
+      "genre": "Janr"
+    },
+    "placeholders": {
+      "name": "Masalan: O'tkan kunlar",
+      "author": "Masalan: Abdulla Qodiriy",
+      "pages": "Masalan: 400",
+      "genre": "Masalan: Roman"
+    },
+    "buttons": {
+      "add": "Kitobni qo'shish",
+      "save": "Ma'lumotlarni saqlash"
+    }
+  },
+  "bookCard": {
+    "tooltips": {
+      "edit": "Tahrirlash",
+      "delete": "O'chirish"
+    },
+    "labels": {
+      "author": "Muallif:",
+      "pages": "Sahifasi:",
+      "genre": "Janr:"
+    },
+    "page_unit": "bet"
+  },
+  "register": {
+    "title": "Ro'yxatdan o'tish",
+    "placeholders": {
+      "first_name": "Ism",
+      "last_name": "Familiya",
+      "age": "Yosh",
+      "email": "Email",
+      "password": "Parol"
+    },
+    "button": "Ro'yxatdan o'tish",
+    "has_account": "Hisobingiz bormi?",
+    "login_link": "Kirish"
+  },
+  "login": {
+    "title": "Xush kelibsiz",
+    "subtitle": "Tizimga kirish uchun ma'lumotlarni kiriting",
+    "labels": {
+      "email": "Email manzil",
+      "password": "Parol"
+    },
+    "buttons": {
+      "submit": "Kirish",
+      "loading": "Tekshirilmoqda..."
+    },
+    "no_account": "Hisobingiz yo'qmi?",
+    "register_link": "Ro'yxatdan o'tish",
+    "error_alert": "Xatolik yuz berdi. Iltimos qaytadan urunib ko'ring."
+  },
+  "about": {
+    "badge": "Profil Ma'lumotlari",
+    "greeting": "Assalomu alaykum, men {{name}}",
+    "age_label": "Yosh",
+    "age_value": "{{yosh}} yoshda",
+    "job_label": "Kasb / Yo'nalish",
+    "description": "\"Ushbu loyiha React va Tailwind CSS yordamida yaratilgan bo'lib, kutubxona tizimini samarali boshqarish uchun mo'ljallangan.\""
+  },
+  "iceCream": {
+    "count_title": "Muzqaymoqlar soni:",
+    "buy_button": "Muzqaymoq sotib olish 🍦"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "description": "Kechirasiz, siz qidirayotgan sahifa mavjud emas yoki boshqa manzilga ko'chirilgan bo'lishi mumkin.",
+    "back_button": "Bosh sahifaga qaytish"
+  },
+  "footer": {
+    "p": "© 2026 Books App. Barcha huquqlar himoyalangan. Tailwind CSS & React bilan mehr bilan yaratildi."
+  }
+}

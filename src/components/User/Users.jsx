@@ -8,6 +8,7 @@ import {
   updateUser as apiUpdateUser,
 } from "../services/userService";
 import { Loader2, Users as UsersIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -17,6 +18,7 @@ function Users() {
   const [email, setEmail] = useState("");
   const [editingUserId, setEditingUserId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   const fetchUsers = useCallback(async () => {
     setLoading(true);
@@ -79,9 +81,9 @@ function Users() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
         <div>
           <h1 className="text-4xl font-extrabold text-white mb-2 flex items-center gap-3">
-            Foydalanuvchilar <UsersIcon className="text-blue-400" />
+            {t("users.title")} <UsersIcon className="text-blue-400" />
           </h1>
-          <p className="text-gray-400 text-lg">Tizimdagi barcha a'zolar ro'yxati</p>
+          <p className="text-gray-400 text-lg">{t("users.subtitle")}</p>
         </div>
         <div className="h-1 flex-grow bg-gray-800 rounded-full hidden md:block mx-8 border-b border-blue-400/20"></div>
       </div>
@@ -116,7 +118,7 @@ function Users() {
             ))
           ) : (
             <div className="col-span-full py-20 text-center bg-gray-800 rounded-3xl border-2 border-dashed border-gray-700">
-              <p className="text-gray-500 text-xl italic">Hozircha foydalanuvchilar mavjud emas.</p>
+              <p className="text-gray-500 text-xl italic">{t("users.noUsers")}</p>
             </div>
           )}
         </div>
